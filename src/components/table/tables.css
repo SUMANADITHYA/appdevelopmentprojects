@@ -1,0 +1,16 @@
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .booking-form {
+    margin-bottom: 20px;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
