@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 const FrontPage = () => {
   return (
     <div className="front-page">
-      <h1>Online Restaurant Management System</h1>
+      <h1>S^3 RESTAURANT</h1>
       <div className="button-container">
         <nav>
           <Link to="/LoginPage">
           <button className="login-button">
-          Login  </button>
+          STAFF  </button>
           </Link> 
           </nav>
           <nav>
             <Link to="/RegisterForm">
-        <button className="register-button">SignUp</button>
+        <button className="login-button">CUSTOMER</button>
         </Link>
         </nav>
       </div>

@@ -1,11 +1,11 @@
 .front-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: orangered;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: deepskyblue;
+  font-family: Arial, sans-serif;
   }
   
   .front-page h1 {
@@ -19,15 +19,17 @@
     gap: 1rem;
   }
   
-  .login-button,
-  .register-button {
+  .login-button {
     padding: 1rem 2rem;
     font-size: 1rem;
     border: none;
     border-radius: 3px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    margin-bottom: 40px;
     cursor: pointer;
+    box-shadow: 0px 4px 8px black;
   }
   
   .login-button:hover,

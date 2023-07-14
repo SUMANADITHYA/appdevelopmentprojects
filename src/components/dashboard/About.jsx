@@ -5,13 +5,13 @@ import './HomePage.css';
 function AboutPage() {
   return (
     <div className="home-page" >
-        <nav className="navbar"> 
+      <nav className="navbar"> 
       <ul className="navbar-list">
         <li className="navbar-item">
-          <Link to="/" style={{textDecoration: 'none'}}>Home</Link>
+          <Link to="/HomeGo" style={{textDecoration: 'none', color:'black'}}>Home</Link>
         </li>
       </ul>
-    </nav>
+    </nav>  
       <h1>About</h1>
       <img className="image-about" src='about1.jpg' alt='abt1' style={{justifyContent:'center'}}></img><br></br>
       <p>Welcome to our restaurant management system! We are dedicated to providing an efficient and seamless experience for both restaurant staff and customers.</p><br></br>
