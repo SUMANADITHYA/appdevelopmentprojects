@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './login.css'; // Import the CSS file
-import { Link } from 'react-router-dom';
-
+import {  useNavigate } from 'react-router-dom';
+import {Link }from 'react-router-dom';
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -23,9 +24,21 @@ const LoginPage = () => {
       return;
     }
 
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
     // Handle login logic here
     console.log('Logging in with email:', email, 'and password:', password);
-    // Redirect or perform other actions upon successful login
+
+    // Navigate to the home page upon successful login
+    navigate('/home');
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -42,10 +55,14 @@ const LoginPage = () => {
         </div>
         {error && <div className="error">{error}</div>}
         <nav>
-        <Link to="/Home">
-        <button type="submit" className="login-button" >Login</button>
-        </Link>
+          <button type="submit" className="login-button">Login</button><br></br>
+          {/* <Link to="/home" className="home-link">Home</Link> */}
         </nav>
+          <nav>
+          <p1>Don't have an account?</p1>
+            <Link to='/SignUp' style={{textDecoration:'none'}}>SignUp</Link>
+          </nav>
+
       </form>
     </div>
   );

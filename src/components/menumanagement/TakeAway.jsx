@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TakeAway.css'; // Import your CSS file
 
 const TakeAway = () => {
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState([]);
+  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
 
   const handleItemClick = (item) => {
     const updatedItems = [...selectedItems];
@@ -62,6 +65,19 @@ const TakeAway = () => {
     { name: 'Pasta', image: '/images/pasta.jpg', price: 9.99 },
   ];
 
+  const handleSubmit = () => {
+    // Perform form submission logic here
+
+    // Check if terms and conditions are accepted
+    if (!isTermsAccepted) {
+      alert('Please accept the terms and conditions.');
+      return;
+    }
+
+    // Navigate to the next page or perform further actions
+    navigate('/Tableconfirmation'); // Replace '/confirmation' with the desired path
+  };
+
   return (
     <div className="food-menu-container">
       <h2>Food Menu</h2>
@@ -100,7 +116,34 @@ const TakeAway = () => {
           </div>
         )}
       </div>
-      <button type="submit">Submit</button>
+      <div className="terms-conditions">
+        <label>
+          <input
+            type="checkbox"
+            checked={isTermsAccepted}
+            onChange={(e) => setIsTermsAccepted(e.target.checked)}
+          />
+          I accept the terms and conditions:
+        </label>
+        <p>
+          By placing an order, you agree to the following terms and conditions:
+        </p>
+        <p>
+          1. All orders must be paid in full at the time of pickup.
+        </p>
+        <p>
+          2. Any changes or cancellations to the order must be made at least 24 hours in advance.
+        </p>
+        <p>
+          3. We are not responsible for any allergies or dietary restrictions. Please inform us of any special requests or concerns.
+        </p>
+        <p>
+          4. Prices and availability of menu items are subject to change without notice.
+        </p>
+      </div>
+      <button type="submit" onClick={handleSubmit}>
+        Submit Order
+      </button>
     </div>
   );
 };

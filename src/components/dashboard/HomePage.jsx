@@ -114,9 +114,13 @@ const HomePage = () => {
         </div>
     
         <div className='img-card'>
-            <img src='combo1.jpg' height='300px' width='380px' alt='tab'/>
-            <h2>Offers Combo</h2>
+            <img src='party.avif' height='300px' width='380px' alt='tab'/>
+            <h2>Hall Booking</h2>
+            <nav>
+            <Link to='/hall'>
             <button className='click-button'>Click</button>
+            </Link>
+            </nav>
 
         </div>
       </div>

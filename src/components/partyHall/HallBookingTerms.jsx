@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './tables.css'; // Import the CSS file for styling
+import './HallBookindTerms.css'; // Import the CSS file for styling
 
-const Tables = () => {
+const HallBookingTerms = () => {
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
 
@@ -12,8 +12,8 @@ const Tables = () => {
 
   const handleSubmit = () => {
     if (isChecked) {
-      // Perform the reservation submission logic here
-      console.log('Reservation submitted!');
+      // Perform the hall booking submission logic here
+      console.log('Hall booking submitted!');
       navigate('/Tableconfirmation'); // Navigate to the confirmation page
     } else {
       // Display an error message or prompt the user to accept the terms
@@ -23,26 +23,26 @@ const Tables = () => {
   };
 
   return (
-    <div className="reservation-terms">
-      <h1 className="title">Table Reservation Terms and Conditions</h1>
+    <div className="hall-booking-terms">
+      <h1 className="title">Hall Booking Terms and Conditions</h1>
       <p className="description">
-        Please read the following terms and conditions carefully before making a table reservation:
+        Please read the following terms and conditions carefully before booking the hall:
       </p>
 
       <h3 className="section-title">Reservation Policy</h3>
       <p>
-        1. Reservations are subject to availability. We recommend making a reservation in advance to secure your table.
+        1. Hall bookings are subject to availability. We recommend making a reservation in advance to secure the hall.
       </p>
       <p>
-        2. The reservation will be held for a maximum of 15 minutes past the reserved time. After that, the table may be given to other waiting customers.
+        2. The hall reservation will be held for a maximum of 1 hour from the scheduled start time. After that, the reservation may be canceled if the hall is not occupied.
       </p>
       
-      <h3 className="section-title">Cancellation Policy</h3>
+      <h3 className="section-title">Payment Policy</h3>
       <p>
-        1. If you need to cancel or modify your reservation, please notify us at least 24 hours in advance.
+        1. A deposit of 50% of the total booking amount is required to confirm the reservation.
       </p>
       <p>
-        2. Failure to cancel or modify your reservation within the specified time may result in a penalty or loss of reservation privileges.
+        2. The remaining balance must be paid at least 7 days before the event date.
       </p>
 
       <label className="accept-label">
@@ -61,4 +61,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default HallBookingTerms;

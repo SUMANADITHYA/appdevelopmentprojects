@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './tables.css'; // Import the CSS file for styling
+import './TableReserveredTerms.css';
 
-const Tables = () => {
+const TableReserveredTerms = () => {
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const Tables = () => {
     if (isChecked) {
       // Perform the reservation submission logic here
       console.log('Reservation submitted!');
-      navigate('/Tableconfirmation'); // Navigate to the confirmation page
+      navigate('/Tableconfirmation'); // Replace '/confirmation' with the desired route for the confirmation page
     } else {
       // Display an error message or prompt the user to accept the terms
       console.log('Please accept the terms and conditions.');
@@ -61,4 +61,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default TableReserveredTerms;

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-
-import FrontPage from './components/frontPage/frontPage';
+// import FrontPage from './components/frontPage/frontPage';
 import LoginPage from './components/login/LoginPage';
 import RegisterForm from './components/registration/RegisterForm';
 import HomePage from './components/dashboard/HomePage';
@@ -15,13 +14,19 @@ import MenuPage from './components/menumanagement/MenuPage';
 import TableReservered from './components/menumanagement/tableReservered';
 import TakeAway from './components/menumanagement/TakeAway';
 import Delivery from './components/menumanagement/delivery';
-
+import BookingForm from './components/partyHall/BookingForm';
+import HallBookingTerms from './components/partyHall/HallBookingTerms';
+import TableReserveredTerms from './components/menumanagement/TableReserveredTerms';
+import Payment from './components/Payment/Payment';
+import PaymentGateway from './components/Payment/PaymentGateway';
+// import ReceiptPage from './components/Payment/ReceiptPage';
 const App=() => {
   return (
     <div>
       <Routes>
-          <Route path='/' element={<FrontPage/>}/>
-          <Route path='/RegisterForm' element={<HomePage/>}/>
+          {/* <Route path='/' element={<FrontPage/>}/> */}
+          <Route path='/' element={<LoginPage/>}/>
+          <Route path='/SignUp' element={<RegisterForm/>}/>
           <Route path='/Log' element={<LoginPage/>} />
           <Route path='/Sign' element={<RegisterForm/>}/>
           <Route path='/Home' element={<HomePage/>}/>
@@ -37,6 +42,12 @@ const App=() => {
           <Route path='/take' element={<TakeAway/>}/>
           <Route path='/delivery' element={<Delivery/>}/>
           <Route path='/HomeGo' element={<HomePage/>}/>
+          <Route path='/hall' element={<BookingForm/>}/>
+          <Route path='/hallBooking' element={<HallBookingTerms/>}/>
+          <Route path='/tableterms' element={<TableReserveredTerms/>}/>
+          <Route path='/Tableconfirmation' element={<Payment/>}/>
+          <Route path='/payment-gateway' element={<PaymentGateway/>}/>
+          {/* <Route path='/receipt' element={<ReceiptPage/>}/> */}
         </Routes>
     </div>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './RegisterForm.css'; // Import the CSS file
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -45,6 +47,7 @@ const RegisterForm = () => {
     // Handle registration logic here
     console.log('Registering with firstname:', firstName, 'lastname:', lastName, 'email:', email, 'and password:', password);
     // Redirect or perform other actions upon successful registration
+    navigate('/Home1');
   };
 
   return (
@@ -73,9 +76,7 @@ const RegisterForm = () => {
         </div>
         {error && <div className="error">{error}</div>}
         <nav>
-        <Link to="/Home1">
-         <button type="submit" className="register-button">Submit</button>
-        </Link>
+          <button type="submit" className="register-button">Submit</button>
         </nav>
       </form>
     </div>

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Delivery.css'; // Import your CSS file
 
 const Delivery = () => {
+  const navigate = useNavigate();
   const [orderItems, setOrderItems] = useState([
     { name: 'Burger', price: 8.99, quantity: 0 },
     { name: 'Pizza', price: 10.99, quantity: 0 },
     { name: 'Fries', price: 3.99, quantity: 0 },
+    // { name: 'Fries', price: 3.99, quantity: 0 },
   ]);
+  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
 
   const handleQuantityChange = (index, quantity) => {
     const updatedItems = [...orderItems];
@@ -22,6 +26,20 @@ const Delivery = () => {
     return totalPrice.toFixed(2);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform form submission logic here
+
+    // Check if terms and conditions are accepted
+    if (!isTermsAccepted) {
+      alert('Please accept the terms and conditions.');
+      return;
+    }
+
+    // Navigate to the next page or perform further actions
+    navigate('/Tableconfirmation'); // Replace '/order-confirmation' with the desired path
+  };
+
   return (
     <div className="food-delivery-container">
       <div className="header">
@@ -30,7 +48,7 @@ const Delivery = () => {
       <div className="content">
         <div className="delivery-info">
           <h2>Delivery Address</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name:</label>
               <input type="text" id="name" required />
@@ -42,6 +60,26 @@ const Delivery = () => {
             <div className="form-group">
               <label htmlFor="phone">Phone:</label>
               <input type="tel" id="phone" required />
+            </div>
+            <div className="terms-conditions">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isTermsAccepted}
+                  onChange={(e) => setIsTermsAccepted(e.target.checked)}
+                />
+                I accept the terms and conditions:
+              </label>
+              <p>
+                By placing an order, you agree to the following terms and conditions:
+              </p>
+              <ol>
+                <li>All orders must be paid in full at the time of delivery.</li>
+                <li>Delivery may take up to 45 minutes depending on the location and traffic conditions.</li>
+                <li>Any changes or cancellations to the order must be made at least 1 hour in advance.</li>
+                <li>We are not responsible for any allergies or dietary restrictions. Please inform us of any special requests or concerns.</li>
+                <li>Prices and availability of menu items are subject to change without notice.</li>
+              </ol>
             </div>
             <button type="submit">Place Order</button>
           </form>

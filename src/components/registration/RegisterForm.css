@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: orangered;
+  background-color: deepskyblue;
   /* background-image: url(regis.jpg);
   background-size: contain; */
   font-family: Arial, sans-serif;
+  
 }
 
 .register-form h2 {
@@ -23,7 +24,7 @@
   width: 300px;
   padding: 2rem;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px black;
 }
 
 .register-form .form-group {

@@ -5,7 +5,7 @@
   justify-content: center;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: deepskyblue;
   
 }
 
@@ -18,11 +18,12 @@ form {
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px black;
 }
 
 .form-group {
   margin-bottom: 20px;
+    /* box-shadow: 0px 4px 8px black; */
 }
 
 label {
@@ -49,6 +50,8 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0px 4px 8px black;
+  justify-content: center;
 }
 
 input[type="submit"]:hover {

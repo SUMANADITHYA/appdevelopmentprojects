@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TableReservered.css';
 
-const TableReserved  = () => {
+const TableReserved = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [tableNumber, setTableNumber] = useState('');
   const [order, setOrder] = useState('');
@@ -21,6 +23,9 @@ const TableReserved  = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform form submission logic here
+
+    // Navigate to another page
+    navigate('/tableterms'); // Replace '/confirmation' with the desired path
   };
 
   return (
