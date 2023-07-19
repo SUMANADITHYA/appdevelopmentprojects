@@ -74,6 +74,12 @@ const TakeAway = () => {
       return;
     }
 
+    // Check if at least one item is selected
+    if (selectedItems.length === 0) {
+      alert('Please select a food item before submitting the order.');
+      return;
+    }
+
     // Navigate to the next page or perform further actions
     navigate('/Tableconfirmation'); // Replace '/confirmation' with the desired path
   };

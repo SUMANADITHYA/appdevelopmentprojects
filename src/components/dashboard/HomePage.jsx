@@ -12,8 +12,8 @@ const HomePage = () => {
   };
   
   return (
-    
-    <div className="home-page">
+    // <div sx={{display:'flex'}}>
+    <div className="home-page" sx={{display:'flex'}}>
       <nav className="navbar" sx={{display:"flex"}}>
         <ul className="navbar-list">
         <nav>
@@ -125,6 +125,7 @@ const HomePage = () => {
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
